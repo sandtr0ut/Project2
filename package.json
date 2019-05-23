@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/sandtr0ut/Project2/issues"
   },
-  "homepage": "https://github.com/sandtr0ut/Project2#readme"
+  "homepage": "https://github.com/sandtr0ut/Project2#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
 }
