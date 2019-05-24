@@ -1,6 +1,8 @@
 const db = require("../models");
 
 module.exports = function(app) {
+    
+    // Get route pulls up all bets of a given user
     app.get("/api/wagers", function(req, res) {
         var query = {};
         if (req.query.user_id) {
@@ -45,6 +47,7 @@ module.exports = function(app) {
         });
     });
     
+    // Put route for updating bets
     app.put("/api/wagers", function(req, res) {
         db.Wager.update(
             req.body,
