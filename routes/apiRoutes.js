@@ -1,24 +1,23 @@
-var db = require("../models");
+// var db = require("../models");
+
+// TODO: Implement authentication
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+    app.get("/api/user/:id", function(request, response) {
+        // TODO: Implement retrieving a user based on the given id from db
+        // const { id } = request.params;
+        response.send("Hello from GET!");
     });
-  });
-
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+    app.post("/api/user", function(request, response) {
+        // TODO: Implement creation of new users
+        response.send("Hello from POST!");
     });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+    app.put("/api/user", function(request, response) {
+        // TODO: Implement updating of users data
+        response.send("Hello from PUT!");
     });
-  });
+    app.delete("/api/user", function(request, response) {
+        // TODO: Implement user deletion
+        response.send("Hello from DELETE!");
+    });
 };
