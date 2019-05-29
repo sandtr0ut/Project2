@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     //globals
     var signupForm = $("#signup");
     var firstNameInput = $("#inputFirst").val().trim();
@@ -12,18 +12,18 @@ $(document).ready(function () {
     var nhl = $("#nhlCheck").prop("checked");
     var ncaaf = $("#ncaafCheck").prop("checked");
     var ncaab = $("#ncaabCheck").prop("checked");
-    
+
     //event-listener for form-submission
     $(document).on("submit", "#signup", handleSignupFormSubmit);
     $(document).on("click", "#cancel", handleCancel);
-    
+
 
     function handleSignupFormSubmit(event) {
         event.preventDefault();
         if (!firstNameInput || !lastNameInput || !emailInput || !passwordInput) {
             return;
         }
-        
+
         createUser({
             first: firstNameInput,
             last: lastNameInput,
@@ -37,18 +37,18 @@ $(document).ready(function () {
             ncaab: ncaab
         })
     }
-    
+
     function createUser(userData) {
         $.post("/api/users", userData)
-        .then(loadDashboard);
+            .then(loadDashboard);
     }
-    
+
     function loadDashboard() {
         window.location.href = "/dashboard.html"
     }
-    
+
     function handleCancel() {
         window.location.href = "/home.html"
     }
-    
+
 });
