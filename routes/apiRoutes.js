@@ -32,6 +32,32 @@ module.exports = function(app) {
             })
             .catch(err => console.log(err));
     });
+    // Active Sports from TheRundown
+    app.get("/api/rdsports", function(request, response) {
+        // Route will serve a list of available sports and their corresponding id's, mainly to provide a choice of sports to follow.
+        // Sports data changes by season so list is updated dynamically through external api
+        apis.theRundown.get
+            .sports()
+            .then(requestedData => {
+                const { data } = requestedData;
+                response.json(data);
+            })
+            .catch(err => console.log(err));
+    });
+    
+    //Events by sport id
+    app.get("/api/events", function(request, response) {
+        // Route will serve a list of available sports and their corresponding id's, mainly to provide a choice of sports to follow.
+        // Sports data changes by season so list is updated dynamically through external api
+        apis.theRundown.get
+            .events()
+            .then(requestedData => {
+                const { data } = requestedData;
+                response.json(data);
+            })
+            .catch(err => console.log(err));
+    });
+    
     app.post("/api/user", function(request, response) {
         // TODO: Implement creation of new users
         response.send("Hello from POST!");

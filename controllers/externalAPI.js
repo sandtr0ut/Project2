@@ -26,4 +26,25 @@ module.exports = {
             },
         },
     },
+    
+    theRundown: {
+        get: {
+            sports: function() {
+                return axios.request({
+                    url: "https://therundown-therundown-v1.p.rapidapi.com/sports",
+                    method: "get",
+                    headers: {"X-RapidAPI-Host": "therundown-therundown-v1.p.rapidapi.com"},
+                    headers: {"X-RapidAPI-Key": "ce809ebaf1mshffed23de73fa792p1c723djsn42af7df6070e"},
+                });
+            },
+            events: function() {
+                return axios.request({
+                    url: "https://therundown-therundown-v1.p.rapidapi.com/sports/3/events?include=all_periods%2C+scores%2C+and%2For+teams",
+                    method: "get",
+                    headers: {"X-RapidAPI-Host": "therundown-therundown-v1.p.rapidapi.com"},
+                    headers: {"X-RapidAPI-Key": "ce809ebaf1mshffed23de73fa792p1c723djsn42af7df6070e"},
+                });
+            },
+        }
+    }
 };
