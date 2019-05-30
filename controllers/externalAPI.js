@@ -8,7 +8,8 @@ module.exports = {
             sports: function() {
                 return axios.get("https://api.the-odds-api.com/v3/sports", {
                     params: {
-                        api_key: process.env.THE_ODDS_API_KEY,
+                        api_key: "174f173495f284be13b11968a2dcca1e",
+                        // api_key: process.env.THE_ODDS_API_KEY,
                         all: 1,
                     },
                 });
@@ -16,7 +17,8 @@ module.exports = {
             odds: function(sport, region) {
                 return axios.get("https://api.the-odds-api.com/v3/odds", {
                     params: {
-                        api_key: process.env.THE_ODDS_API_KEY,
+                        api_key: "174f173495f284be13b11968a2dcca1e",
+                        // api_key: process.env.THE_ODDS_API_KEY,
                         sport: sport,
                         region: region,
                     },
