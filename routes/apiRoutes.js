@@ -5,7 +5,7 @@ module.exports = function(app) {
     // then make a request to the external API, returning both the pulled data combined with the user data
     app.get("/api/theodds/odds", function(request, response) {
         apis.theOdds.get
-            .odds("americanfootball_nfl", "us")
+            .odds(request.query)
             .then(requestedData => {
                 const { data } = requestedData;
                 response.json(data);
@@ -16,20 +16,9 @@ module.exports = function(app) {
     // TODO: Add documentation
     app.get("/api/theodds/sports", function(request, response) {
         apis.theOdds.get
-            .sports()
+            .sports(request.query)
             .then(requestedData => {
-                const { data } = requestedData;
-                response.json(data);
-            })
-            .catch(err => console.log(err));
-    });
-
-    // Route will serve a list of available sports and their corresponding id's, mainly to provide a choice of sports to follow.
-    // Sports data changes by season so list is updated dynamically through external api
-    app.get("/api/sports", function(request, response) {
-        apis.theOdds.get
-            .sports()
-            .then(requestedData => {
+                console.log(requestedData);
                 const { data } = requestedData;
                 response.json(data);
             })
@@ -40,7 +29,7 @@ module.exports = function(app) {
     // Sports data changes by season so list is updated dynamically through external api
     app.get("/api/rundown/sports", function(request, response) {
         apis.theRundown.get
-            .sports()
+            .sports(request.query)
             .then(requestedData => {
                 const { data } = requestedData;
                 response.json(data);
@@ -52,7 +41,7 @@ module.exports = function(app) {
     // Sports data changes by season so list is updated dynamically through external api
     app.get("/api/rundown/events", function(request, response) {
         apis.theRundown.get
-            .events()
+            .events(request.query)
             .then(requestedData => {
                 const { data } = requestedData;
                 response.json(data);
