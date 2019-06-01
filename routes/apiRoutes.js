@@ -39,9 +39,10 @@ module.exports = function(app) {
 
     // Route will serve a list of available sports and their corresponding id's, mainly to provide a choice of sports to follow.
     // Sports data changes by season so list is updated dynamically through external api
-    app.get("/api/rundown/events", function(request, response) {
+    app.get("/api/rundown/:id/events", function(request, response) {
+        const id = request.params.id;
         apis.theRundown.get
-            .events(request.query)
+            .events(id, request.query)
             .then(requestedData => {
                 const { data } = requestedData;
                 response.json(data);
