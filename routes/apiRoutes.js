@@ -1,23 +1,52 @@
-// var db = require("../models");
-
-// TODO: Implement authentication
+const apis = require("../controllers/externalAPI");
 
 module.exports = function(app) {
-    app.get("/api/user/:id", function(request, response) {
-        // TODO: Implement retrieving a user based on the given id from db
-        // const { id } = request.params;
-        response.send("Hello from GET!");
+    // App will take an id from the request body, get the preferences from the database (via Sequelize),
+    // then make a request to the external API, returning both the pulled data combined with the user data
+    app.get("/api/theodds/odds", function(request, response) {
+        apis.theOdds.get
+            .odds(request.query)
+            .then(requestedData => {
+                const { data } = requestedData;
+                response.json(data);
+            })
+            .catch(err => console.log(err));
     });
-    app.post("/api/user", function(request, response) {
-        // TODO: Implement creation of new users
-        response.send("Hello from POST!");
+
+    // TODO: Add documentation
+    app.get("/api/theodds/sports", function(request, response) {
+        apis.theOdds.get
+            .sports(request.query)
+            .then(requestedData => {
+                console.log(requestedData);
+                const { data } = requestedData;
+                response.json(data);
+            })
+            .catch(err => console.log(err));
     });
-    app.put("/api/user", function(request, response) {
-        // TODO: Implement updating of users data
-        response.send("Hello from PUT!");
+
+    // Route will serve a list of available sports and their corresponding id's, mainly to provide a choice of sports to follow.
+    // Sports data changes by season so list is updated dynamically through external api
+    app.get("/api/rundown/sports", function(request, response) {
+        apis.theRundown.get
+            .sports(request.query)
+            .then(requestedData => {
+                const { data } = requestedData;
+                response.json(data);
+            })
+            .catch(err => console.log(err));
     });
-    app.delete("/api/user", function(request, response) {
-        // TODO: Implement user deletion
-        response.send("Hello from DELETE!");
+
+    // Route will serve a list of available sports and their corresponding id's, mainly to provide a choice of sports to follow.
+    // Sports data changes by season so list is updated dynamically through external api
+    app.get("/api/rundown/:id/events", function(request, response) {
+        const id = request.params.id;
+        apis.theRundown.get
+            .events(id, request.query)
+            .then(requestedData => {
+                const { data } = requestedData;
+                response.json(data);
+            })
+            .catch(err => console.log(err));
     });
 };
