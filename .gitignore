@@ -88,6 +88,9 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# Desktop Services Store transactions to be ignored
+.DS_Store
+
 # End of https://www.gitignore.io/api/node
 
 config
