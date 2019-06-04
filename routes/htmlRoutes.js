@@ -16,6 +16,10 @@ module.exports = function(app) {
         response.render("signup", request);
     });
 
+    app.get("/example", function(request, response) {
+        response.render("example", request);
+    });
+
     app.get("/preferences", function(request, response) {
         response.render("preferences", request);
     });
