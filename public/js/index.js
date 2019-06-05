@@ -5,31 +5,79 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+//=============================================
+// Constructors w/Ajax Methods
+//=============================================
+
+// TODO update API for theodds and rundown
 // The API object contains methods for each kind of request we'll make
 var API = {
-    saveExample: function(example) {
+    getSports: function() {
+        return $.ajax({
+            url: "api/theodds/sports",
+            type: "GET",
+        });
+    },
+    getRDsports: function() {
+        return $.ajax({
+            url: "api/rundown/sports",
+            type: "GET"
+        });
+    },
+    
+    getOdds: function() {
+        return $.ajax({
+            url: "api/theodds/odds",
+            type: "GET"
+        });
+    },
+    
+    getEvents: function(id) {
+        return $.ajax({
+            url: "api/rundown/" + id + "events",
+            type: "GET"
+        });
+    },
+    
+};
+
+
+// TODO create User constructor
+
+var User = {
+    createUser: function(user) {
         return $.ajax({
             headers: {
                 "Content-Type": "application/json"
             },
             type: "POST",
-            url: "api/examples",
-            data: JSON.stringify(example)
+            url: "api/user",
+            data: JSON.stringify(user)
         });
     },
-    getExamples: function() {
+    
+    getUser: function(id) {
         return $.ajax({
-            url: "api/examples",
+            url: "api/user/" + id,
             type: "GET"
         });
     },
-    deleteExample: function(id) {
+    
+    deleteUser: function(id) {
         return $.ajax({
-            url: "api/examples/" + id,
+            url: "api/user/" + id,
             type: "DELETE"
         });
-    }
+    },
+    
+    updateUser: function(id) {
+        return $.ajax({
+            url: "api/user/" + id,
+            type: "PUT"
+        });
+    },
 };
+
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
