@@ -1,21 +1,49 @@
 /* eslint-disable prettier/prettier */
-// var db = require("../models");
+var db = require("../models");
 
-module.exports = function(app) {
-    app.post("/api/user", function(request, response) {
-        // TODO: Implement creation of new users
-        response.send("Hello from POST!");
+module.exports = function (app) {
+    
+    // Login
+    app.get("/api/user/:id", function(request, response) {
+        db.User.findOne({
+            where: {
+                id: request.params.id
+            },
+        }).then(function(dbUser) {
+            response.json(dbUser);
+        });
     });
+    
+    // Create New User
+    app.post("/api/user", function (request, response) {
+        db.User.create(request.body).then(function (dbUser) {
+            response.json(dbUser);
+        });
+    });
+    
+    // Delete User
+    app.delete("/api/user/:id", function(request, response) {
+        db.User.destroy({
+            where: {
+                id: request.params.id
+            }
+        }).then(function(dbUser) {
+            response.json(dbUser);
+        });
+    });
+    
+
+    // Update User Information
     app.put("/api/user", function(request, response) {
-        // TODO: Implement updating of users data
-        response.send("Hello from PUT!");
+        db.User.update(
+            request.body,
+            {
+                where: {
+                    id: request.body.id
+                }
+            }).then(function(dbUser) {
+            response.json(dbUser);
+        });
     });
-    app.delete("/api/user", function(request, response) {
-        // TODO: Implement user deletion
-        response.send("Hello from DELETE!");
-    });
-    app.get("/api/login", function(request, response) {
-        // TODO: Implement login authorization
-        response.send("Hello from login!");
-    });
+
 };
