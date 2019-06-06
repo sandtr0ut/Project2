@@ -16,6 +16,15 @@ module.exports = function(app) {
         db.User.findOne({
             where: { email, password },
         }).then(authUser => {
+            if (!authUser) {
+                response
+                    .status(404)
+                    .send({
+                        errorMessage: "Failed to authenticate user with the given credentials",
+                    })
+                    .end();
+                return;
+            }
             response.send(authUser).end();
         });
     });
