@@ -1,4 +1,6 @@
 var db = require("../models");
+/* eslint-disable prettier/prettier */
+// var db = require("../models");
 
 module.exports = function(app) {
     app.post("/api/user", function(request, response) {
