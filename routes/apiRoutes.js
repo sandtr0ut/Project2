@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const apis = require("../controllers/externalAPI");
 
 module.exports = function(app) {
