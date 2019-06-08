@@ -1,33 +1,72 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+<link rel="stylesheet" href="./css/background.css">
+<div class="hero-body main-block-thing">
+  <div class="container has-text-centered">
+    <div class="slider-content animated zoomIn">
+      <div>
+        <p class="title is-1 main-text">Welcome to The Book</p>
+        <p class="subtitle is-4 main-text">Place Your Bets!!!</p>
       </div>
     </div>
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+
+<section class="container sports-main-container">
+  <div class="sandbox">
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-shady">
+        <article class="tile is-child notification is-white">
+          <p class="title">Baseball</p>
+          <figure class="image is-4by3">
+            <img src="/images/baseball.jpg" alt="Description">
+          </figure>
+        </article>
+      </div>
+      <div class="tile is-parent is-shady">
+        <article class="tile is-child notification is-white">
+          <p class="title">Basketball</p>
+          <figure class="image is-4by3">
+            <img src="/images/basketball.jpg" alt="Description">
+          </figure>
+        </article>
+      </div>
+      <div class="tile is-parent is-shady">
+        <article class="tile is-child notification is-white">
+          <p class="title">Hockey</p>
+          <figure class="image is-4by3">
+            <img src="/images/hockey.jpg" alt="Description">
+          </figure>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-shady">
+        <article class="tile is-child notification is-white">
+          <p class="title">Rugby</p>
+          <figure class="image is-4by3">
+            <img src="/images/rugby.jpg" alt="Description">
+          </figure>
+        </article>
+      </div>
+      <div class="tile is-parent is-shady">
+        <article class="tile is-child notification is-white">
+          <p class="title">Soccer</p>
+          <figure class="image is-4by3">
+            <img src="/images/soccer.jpg" alt="Description">
+          </figure>
+        </article>
+      </div>
+      <div class="tile is-parent is-shady">
+        <article class="tile is-child notification is-white">
+          <p class="title">Tennis</p>
+          <figure class="image is-4by3">
+            <img src="/images/tennis.jpg" alt="Description">
+          </figure>
+        </article>
+      </div>
+    </div>
+
+
+  </div>
+
+</section>

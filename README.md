@@ -89,3 +89,68 @@ As a user, I want my dashboard to display `links to relevant news stories` so I 
 2.
 
 <br>
+
+### Project Structure
+
+
+```
+└── config
+│   ├── config.json
+│   └── middleware
+│       └── isAuthenticated.js
+│
+└── controllers
+│   ├── Cycle.js
+│   └── externalAPI.js
+│ 
+└── models
+│   └── schema.sql
+│   └── index.js
+│   └── user.js
+│
+└── node_modules
+│ 
+└── package.json
+│
+└── public
+│   └── assets
+│       ├── css
+│       │   └── bulma.css
+│       │   └── bulma.css.map.css
+│       │   └── bulma.min.css
+│       │   └── index.css
+│       └── images
+│       └── js
+│           └── bulma.js
+│           └── index.js
+└── routes
+│   └── apiRoutes.js
+│   └── htmlRoutes.js
+│   └── userRoutes.js
+│
+└── test
+│   └── canary.test.js
+│
+└── views
+│   ├── layouts
+│   │   └── main.handlebars
+│   ├── 404.handlebars
+│   ├── index.handlebars
+│   ├── login.handlebars
+│   ├── signup.handlebars
+│   ├── preferences.handlebars
+│   └── mlb.handlebars
+│
+└── .eslintrc.json
+└── .gitignore
+└── .env
+└── package-lock.json
+└── package.json
+└── README.md
+└── Procfile
+│ 
+└── server.js
+
+
+
+``` 
