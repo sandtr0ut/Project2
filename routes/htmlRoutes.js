@@ -27,8 +27,8 @@ module.exports = function (app) {
                 const { data } = requestedData;
                 let eventsArray = [];
 
-                for (var i = 0; i < data.body.events.length; i++) {
-                    var game = data.body.events[i];
+                for (var i = 0; i < data.events.length; i++) {
+                    var game = data.events[i];
 
                     var details = {
 
