@@ -69,9 +69,12 @@ As a die-hard sports fan, I love having skin in the game. It gives me a personal
 │   │   └── main.handlebars
 │   ├── 404.handlebars
 │   ├── index.handlebars
-│   ├── login.handlebars
 │   ├── signup.handlebars
-│   ├── preferences.handlebars
+│   ├── nfl.handlebars
+│   ├── ncaaf.handlebars
+│   ├── ncaab.handlebars
+│   ├── nba.handlebars
+│   ├── nhl.handlebars
 │   └── mlb.handlebars
 │
 └── .eslintrc.json
