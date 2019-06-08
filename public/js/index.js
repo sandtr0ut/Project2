@@ -1,9 +1,10 @@
 /* eslint-disable prettier/prettier */
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $first = $("#first");
+var $last = $("#last");
+var $email = $("#email");
+var $password = $("#password");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {

@@ -5,6 +5,45 @@
 
 const apis = require("../controllers/externalAPI");
 
+const sportList =  [
+    {
+        "sport_id": 1,
+        "sport_name": "NCAA Football"
+    },
+    {
+        "sport_id": 2,
+        "sport_name": "NFL"
+    },
+    {
+        "sport_id": 3,
+        "sport_name": "Major League Baseball"
+    },
+    {
+        "sport_id": 4,
+        "sport_name": "NBA"
+    },
+    {
+        "sport_id": 5,
+        "sport_name": "NCAA Men's Basketball"
+    },
+    {
+        "sport_id": 6,
+        "sport_name": "NHL"
+    },
+    {
+        "sport_id": 7,
+        "sport_name": "UFC/MMA"
+    },
+    {
+        "sport_id": 8,
+        "sport_name": "WNBA"
+    },
+    {
+        "sport_id": 9,
+        "sport_name": "CFL"
+    }
+];
+
 function getSports(id, request, response) {
     apis.theRundown.get
         .events(id)
@@ -16,7 +55,7 @@ function getSports(id, request, response) {
                 var game = data.events[i];
 
                 var details = {
-                    sport: "Major League Baseball",
+                    sport: sportList[2].sport_name,
                     eventDate: game.event_date,
                     awayTeam: game.teams[0].name,
                     homeTeam: game.teams[1].name,

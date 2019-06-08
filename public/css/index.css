@@ -233,3 +233,8 @@ a {
 .title {
     color: black !important;
 }
+
+th,
+td {
+    text-align: center !important;
+}

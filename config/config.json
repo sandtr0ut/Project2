@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "B8master!",
     "database": "thebookdb",
     "host": "localhost",
     "dialect": "mysql"
