@@ -31,7 +31,7 @@ function getSports(id, request, response) {
                 };
                 eventsArray.push(details);
             }
-            response.render("mlb", {
+            response.render("sports", {
                 eventsArray,
             });
         })
