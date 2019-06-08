@@ -42,7 +42,7 @@ var refreshExamples = function() {
             var $li = $("<li>")
                 .attr({
                     class: "list-group-item",
-                    "data-id": example.id
+                    "data-id": sport.id
                 })
                 .append($a);
 
