@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
@@ -20,96 +20,107 @@
 </head>
 
 <body>
-  <section class="hero is-info is-medium is-bold">
+  <section class="hero main_hero is-fullheight">
     <div class="hero-head">
-      <nav class="navbar">
+      <div class="first_nav">
         <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item" href="../">
-              <img src="/images/logo.png" alt="Logo">
-            </a>
-            <span class="navbar-burger burger" data-target="navbarMenu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenu" class="navbar-menu">
-            <div class="navbar-end">
-              <div class="tabs is-right">
-                <ul>
-                  <li class="is-active"><a href="/">Home</a></li>
-                  <li><a href="./mlb">Baseball</a></li>
-                  <li><a href="./nba">Basketball</a></li>
-                  <li><a href="./nhl">Hockey</a></li>
-                  <li><a href="./mls">Soccer</a></li>
-                </ul>
-              </div>
+          <nav class="navbar">
+            <div class="navbar-brand">
+              <!-- Brand Logo -->
+              <a class="navbar-item" href="http://aldi.github.io/awesome-bulma-templates">
+                <img src="#" alt="Logo" width="112" height="28">
+              </a>
+
             </div>
-          </div>
+            <!-- Menu -->
+            <div id="navMenuBlogHero" class="navbar-menu">
+              <!-- Left Nav -->
+              <div class="navbar-start">
+                <a class="navbar-item is-active" href="#home">Home</a>
+                <a class="navbar-item" href="#baseball">Baseball</a>
+                <a class="navbar-item" href="#basketball">Basketball</a>
+                <a class="navbar-item" href="#hockey">Hockey</a>
+                <a class="navbar-item" href="#rugby">Rugby</a>
+                <a class="navbar-item" href="#soccer">Soccer</a>
+                <a class="navbar-item" href="#tennis">Tennis</a>
+              </div>
+              <!-- ./Left Nav -->
+
+            </div>
+            <!-- ./Menu -->
+          </nav>
         </div>
-      </nav>
+      </div>
     </div>
-  </section>
-
-  {{{body}}}
-  <section class="hero" id="contact-us">
     <div class="hero-body">
-      <div class="container">
-        <div>
-          <div class="content">
-            <h4 class="title is-4">Sign Up For Daily Odds</h4>
-          </div>
-          <h6 class="subtitle is-6">All Sports. All World. All Safe. The Latest Odds On Your Favorite Sports Are
-            Keystrokes Away.
-
-          </h6>
-
-          <div class="columns box">
-            <form class="column" action="#">
-              <div class="field">
-                <label class="label">First Name</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="First Name" required="">
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Last Name</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Last Name" required="">
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Email" required="">
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Password</label>
-                <div class="control">
-                  <input class="input" type="text" placeholder="Password" required="">
-                </div>
-              </div>
-
-
-              <div class="field">
-                <label class="label"></label>
-                <div class="control">
-                  <input class="button is-primary" type="submit">
-                </div>
-              </div>
-            </form>
-
-
+      <div class="container has-text-centered">
+        <div class="slider-content animated zoomIn">
+          <div>
+            <p class="title is-1 main-text">Welcome to The Book</p>
+            <p class="subtitle is-4 main-text">Place Your Bets!!!</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+    {{{body}}}
+    <section class="hero" id="contact-us">
+      <div class="hero-body">
+        <div class="container">
+          <div>
+            <div class="content">
+              <h4 class="title is-4">Sign Up For Daily Odds</h4>
+            </div>
+            <h6 class="subtitle is-6">All Sports. All World. All Safe. The Latest Odds On Your Favorite Sports Are
+              Keystrokes Away.
+
+            </h6>
+
+            <div class="columns box">
+              <form class="column" action="#">
+                <div class="field">
+                  <label class="label">First Name</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="First Name" required="">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Last Name</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Last Name" required="">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Email" required="">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="label">Password</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Password" required="">
+                  </div>
+                </div>
+
+
+                <div class="field">
+                  <label class="label"></label>
+                  <div class="control">
+                    <input class="button is-primary" type="submit">
+                  </div>
+                </div>
+              </form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
 
 </body>
