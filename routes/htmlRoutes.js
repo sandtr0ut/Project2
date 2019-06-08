@@ -5,7 +5,7 @@
 
 const apis = require("../controllers/externalAPI");
 
-const sportList =  [
+const sportList = [
     {
         "sport_id": 1,
         "sport_name": "NCAA Football"
@@ -97,15 +97,30 @@ module.exports = function(app) {
     });
     app.get("/nba", function(request, response) {
         getSports(4, request, response);
+    });    
+    app.get("/ncaab", function(request, response) {
+        getSports(5, request, response);
     });
     app.get("/nfl", function(request, response) {
         getSports(2, request, response);
+    });    
+    app.get("/ncaaf", function(request, response) {
+        getSports(1, request, response);
     });
     app.get("/nhl", function(request, response) {
         getSports(6, request, response);
     });
+    app.get("/ufcmma", function(request, response) {
+        getSports(7, request, response);
+    });
+    app.get("/wnba", function(request, response) {
+        getSports(8, request, response);
+    });
     app.get("/mls", function(request, response) {
         getSports(10, request, response);
+    });
+    app.get("/cfl", function(request, response) {
+        getSports(9, request, response);
     });
     // Render 404 page for any unmatched routes
     app.get("*", function(request, response) {
