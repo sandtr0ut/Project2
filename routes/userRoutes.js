@@ -1,4 +1,3 @@
-var db = require("../models");
 /* eslint-disable prettier/prettier */
 // var db = require("../models");
 
