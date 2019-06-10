@@ -50,12 +50,16 @@ function getSports(id, request, response) {
         .then(requestedData => {
             const { data } = requestedData;
             let eventsArray = [];
+            
+            let current = parseInt(id) - 1;
+            let currSport = sportList[current];
+            console.log("Current Sport = " + currSport);
+            let currentSport = currSport.sport_name;
 
             for (var i = 0; i < data.events.length; i++) {
                 var game = data.events[i];
 
                 var details = {
-                    sport: sportList[2].sport_name,
                     eventDate: game.event_date,
                     awayTeam: game.teams[0].name,
                     homeTeam: game.teams[1].name,
@@ -71,6 +75,7 @@ function getSports(id, request, response) {
                 eventsArray.push(details);
             }
             response.render("sports", {
+                currentSport: currentSport,
                 eventsArray,
             });
         })

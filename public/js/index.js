@@ -1,30 +1,31 @@
 /* eslint-disable prettier/prettier */
 // Get references to page elements
-var $first = $("#first");
-var $last = $("#last");
+var $firstName = $("#first");
+var $lastName = $("#last");
 var $email = $("#email");
 var $password = $("#password");
+var $preferences = {};
 var $submitBtn = $("#submit");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-    saveExample: function(example) {
+    saveUser: function(user) {
         return $.ajax({
             headers: {
                 "Content-Type": "application/json"
             },
             type: "POST",
-            url: "api/examples",
-            data: JSON.stringify(example)
+            url: "/user",
+            data: JSON.stringify(user)
         });
     },
-    getExamples: function() {
+    getUserInfo: function(id) {
         return $.ajax({
             url: "api/examples",
             type: "GET"
         });
     },
-    deleteExample: function(id) {
+    deleteUser: function(id) {
         return $.ajax({
             url: "api/examples/" + id,
             type: "DELETE"
@@ -66,9 +67,12 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
     event.preventDefault();
 
-    var example = {
-        text: $exampleText.val().trim(),
-        description: $exampleDescription.val().trim()
+    var newUser = {
+        firstName: $firstName.val().trim(),
+        lastName: $lastName.val().trim(),
+        email: $email.val().trim(),
+        password: $password.val().trim(),
+        preferences: $preferences
     };
 
     if (!(example.text && example.description)) {
@@ -76,8 +80,9 @@ var handleFormSubmit = function(event) {
         return;
     }
 
-    API.saveExample(example).then(function() {
-        refreshExamples();
+    API.saveUser(newUser).then(function() {
+        refresh();
+        // refreshExamples();
     });
 
     $exampleText.val("");
