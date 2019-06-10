@@ -1,31 +1,45 @@
 /* eslint-disable prettier/prettier */
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 
-// The API object contains methods for each kind of request we'll make
+var $firstName = $("#first");
+var $lastName = $("#last");
+var $email = $("#email");
+var $password = $("#password");
+var $preferences = {};
+var $submitBtn = $("#submit");
+
+
 var API = {
-    saveExample: function(example) {
+    // Create
+    saveUser: function(user) {
         return $.ajax({
             headers: {
                 "Content-Type": "application/json"
             },
             type: "POST",
-            url: "api/examples",
-            data: JSON.stringify(example)
+            url: "/user",
+            data: JSON.stringify(user)
         });
     },
-    getExamples: function() {
+    // Read
+    getUserInfo: function(id) {
         return $.ajax({
-            url: "api/examples",
+            url: "/user/:" + id,
             type: "GET"
         });
     },
-    deleteExample: function(id) {
+    
+    // Update
+    updateInfo: function(id) {
         return $.ajax({
-            url: "api/examples/" + id,
+            url: "/user/:" + id,
+            type: "GET"
+        });
+    },
+    
+    //Delete
+    deleteUser: function(id) {
+        return $.ajax({
+            url: "/user/:" + id,
             type: "DELETE"
         });
     }
@@ -60,27 +74,33 @@ var refreshExamples = function() {
     });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
+
+// Save the new user to the db
 var handleFormSubmit = function(event) {
     event.preventDefault();
 
-    var example = {
-        text: $exampleText.val().trim(),
-        description: $exampleDescription.val().trim()
+    var newUser = {
+        firstName: $firstName.val().trim(),
+        lastName: $lastName.val().trim(),
+        email: $email.val().trim(),
+        password: $password.val().trim(),
+        preferences: $preferences
     };
 
-    if (!(example.text && example.description)) {
-        alert("You must enter an example text and description!");
+    if (!(newUser.email && newUser.password)) {
+        alert("You must enter your email and password!");
         return;
     }
 
-    API.saveExample(example).then(function() {
-        refreshExamples();
+    API.saveUser(newUser).then(function() {
+        alert("User Added");
+        
     });
 
-    $exampleText.val("");
-    $exampleDescription.val("");
+    $firstName.val("");
+    $lastName.val("");
+    $email.val("");
+    $password.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked

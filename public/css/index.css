@@ -233,3 +233,13 @@ a {
 .title {
     color: black !important;
 }
+
+th,
+td {
+    text-align: center !important;
+}
+
+.sportTitle {
+    margin: 20px;
+    size: 32px;
+}

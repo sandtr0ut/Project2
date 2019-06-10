@@ -10,13 +10,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-  <link rel="stylesheet" href="./css/index.css">
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css" />
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
@@ -53,6 +54,7 @@
 
 
     {{{body}}}
+    
     <section class="hero" id="contact-us">
       <div class="hero-body">
         <div class="container">
@@ -70,28 +72,28 @@
                 <div class="field">
                   <label class="label">First Name</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="First Name" required="">
+                    <input class="input" id="first" type="text" placeholder="First Name" required="">
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label">Last Name</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Last Name" required="">
+                    <input class="input" id="last" type="text" placeholder="Last Name" required="">
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label">Email</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Email" required="">
+                    <input class="input" id="email" type="text" placeholder="Email" required="">
                   </div>
                 </div>
 
                 <div class="field">
                   <label class="label">Password</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Password" required="">
+                    <input class="input" id="password"  type="text" placeholder="Password" required="">
                   </div>
                 </div>
 
@@ -99,7 +101,7 @@
                 <div class="field">
                   <label class="label"></label>
                   <div class="control">
-                    <input class="button is-primary" type="submit">
+                    <input class="button is-primary" id="submit" type="submit">
                   </div>
                 </div>
               </form>
